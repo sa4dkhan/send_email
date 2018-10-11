@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Send</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<h2>Email Send</h2>
+<div class="col-md-4">
+    <form method="POST" id="post-form">
+        {% csrf_token %}
+        <div class="fieldWrapper" id="the_post">
+            {{ form }}
+        </div>
+        <div id="results"></div> <!-- errors go here -->
+        <input type="submit" value="Post" class="tiny button">
+    </form>
+</div>
+
+
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+{#<script>#}
+{#    $('#post-form').on('submit', function(event){#}
+{#        event.preventDefault();#}
+{#        console.log("form submitted!")  // sanity check#}
+{#        create_post();#}
+{#    });#}
+{##}
+{#    // AJAX for posting#}
+{#    function create_post() {#}
+{#        console.log("create post is working!") // sanity check#}
+{#        console.log($('#subject-text').val())#}
+{#    };#}
+{#</script>#}
+
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker5').datetimepicker({
+            defaultDate: "11/1/2013",
+            disabledDates: [
+                moment("12/25/2013"),
+                new Date(2013, 11 - 1, 21),
+                "11/22/2013 00:53"
+            ]
+        });
+    });
+</script>
+
+</body>
+</html>
